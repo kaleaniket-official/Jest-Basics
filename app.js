@@ -1,16 +1,22 @@
 
 const express = require("express");
-const app = express();
 
-app.use(express.json())
-app.post("/users", (req,res) => {
+const database = (database) => {
+    const app = express();
+    app.use(express.json())
+    app.post("/users", (req,res) => {
+    
+        const {pass,user} = req.body;
+        if(!pass || !user){
+            res.sendStatus(400);
+            return;
+        }
 
-    const {pass,user} = req.body;
-    if(!pass || !user){
-        res.sendStatus(400);
-        return;
-    }
-    res.send({userId: 0});
-});
+        const userId = database.creatUser(user,pass);
 
-module.exports  = app;
+        res.send({userId});
+    });
+    return app;
+}
+
+module.exports  = database;

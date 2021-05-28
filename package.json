@@ -7,7 +7,8 @@
     "start": "node",
     "dev": "nodemon",
     "test": "jest --coverage"
-  },
+  }, 
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kaleaniket-official/Jest-Basics.git"
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/kaleaniket-official/Jest-Basics#readme",
   "devDependencies": {
+    "@types/typescript": "^2.0.0",
     "express": "^4.17.1",
     "jest": "^27.0.1",
     "nodemon": "^2.0.7",
